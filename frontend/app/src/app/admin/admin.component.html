@@ -1,0 +1,20 @@
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Caption</th>
+        <th>Comments</th>
+    </tr>
+    @for(n of news;track n){
+        <tr>
+            <td>{{n.id}}</td>
+            <td>{{n.caption}}</td>
+            <td>
+                <ul>
+                    @for(com of n.comments;track com){
+                        <li>{{com.text}}</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    }
+</table>
