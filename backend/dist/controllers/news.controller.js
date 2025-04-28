@@ -23,7 +23,10 @@ class NewsController {
             news_1.default.findOne({ 'id': id }).then(result => {
                 if (result) {
                     let comment = { text: commentText };
-                    news_1.default.updateOne({ 'id': id }, { $push: { 'comments': comment } }).then();
+                    //News.collection.updateOne({'id':id},{$push:{'comments':comment}}).then();
+                    console.log(id);
+                    console.log(comment);
+                    news_1.default.collection.updateOne({ 'id': id }, { $push: { 'comments': comment } });
                     res.json({ 'message': 'ok' });
                 }
                 else {

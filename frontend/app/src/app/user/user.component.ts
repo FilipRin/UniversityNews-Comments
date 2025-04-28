@@ -28,7 +28,9 @@ export class UserComponent {
   comment:string;
 
   add(){
-    this.servis.addComment(this.id,this.comment);
+    this.servis.addComment(this.id,this.comment).subscribe(resp=>{
+      alert(resp['message'])
+    });
   }
 
 }

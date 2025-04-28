@@ -21,7 +21,7 @@ export class NewsService {
       id:id,
       comment:comment
     }
-    this.http.post(`${this.uri}/news/addComment`,data)
+    return this.http.post(`${this.uri}/news/addComment`,data)
   }
 
 }

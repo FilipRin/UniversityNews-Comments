@@ -19,8 +19,9 @@ export class NewsController{
             if(result){
                 let comment={text:commentText}
                 //News.collection.updateOne({'id':id},{$push:{'comments':comment}}).then();
-                News.collection.updateOne({'id':id},{$push:{'comments':comment}}).then();
-                
+                console.log(id);
+                console.log(comment);
+                News.collection.updateOne({'id':id},{$push:{'comments':comment}});
                 res.json({'message':'ok'})
             }else{
                 console.log("ERROR");
